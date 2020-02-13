@@ -1,3 +1,27 @@
+List all users using /etc/passwd file
+
+use cat or less
+
+less /etc/passwd
+
+
+each line has seven fields delimited by colons that contain the following information:
+
+User name
+Encrypted password (x means that the password is stored in the /etc/shadow file)
+User ID number (UID)
+User’s group ID number (GID)
+Full name of the user (GECOS)
+User home directory
+Login shell (defaults to /bin/bash)
+
+
+
+
+
+
+
+
 
 users
 
