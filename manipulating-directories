@@ -1,1 +1,55 @@
 
+ To move or rename Directory:
+
+ mv <source_directory> <target_directory>
+ 
+ 
+ list files:
+ 
+  ls 
+  
+  include hidden files 
+  ls -a
+  
+  list ownership:
+  ls -l
+  
+  these can be combined
+  ls -la
+  or 
+  ls -al
+  
+  
+  When Moving Files:
+  
+  mv [options] source dest
+
+mv command options
+mv command main options:
+
+option	description
+mv -f	force move by overwriting destination file without prompt
+mv -i	interactive prompt before overwrite
+mv -u	update - move when source is newer than destination
+mv -v	verbose - print source and destination files
+man mv	help manual
+mv command examples
+Move main.c def.h files to /home/usr/rapid/ directory:
+
+$ mv main.c def.h /home/usr/rapid/
+
+ 
+
+Move all C files in current directory to subdirectory bak :
+
+$ mv *.c bak
+
+ 
+
+Move all files in subdirectory bak to current directory :
+
+$ mv bak/* .
+  
+  
+  
+  
