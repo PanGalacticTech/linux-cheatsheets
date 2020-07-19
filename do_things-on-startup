@@ -101,6 +101,8 @@ Enjoy
 
 
 
+// THIS BIT WORKED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Notes#
 Yes I had the same problem and the instructions on this stack overflow page helped fix it:
 https://raspberrypi.stackexchange.com/q ... e086bdccc2
@@ -110,6 +112,16 @@ I have a Raspberry Pi 2 running Raspbian Jessie with Chromium 45 installed. I fo
 
 mkdir -p /home/pi/.config/lxsession/LXDE-pi/
 cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+
+So edit this local version:
+
+nano /home/pi/.config/lxsession/LXDE-pi/autostart
+
+#@xscreensaver -no-splash  # comment this line out to disable screensaver
+@xset s off
+@xset -dpms
+@xset s noblank
+@chromium-browser --incognito --kiosk http://localhost/  # load chromium after boot and point to the localhost webserver in full screen mode
 
 In short you need to use the pi user's autostart file in order to launch chromium, not the system wide one.
 
