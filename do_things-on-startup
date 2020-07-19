@@ -105,6 +105,18 @@ Notes#
 Yes I had the same problem and the instructions on this stack overflow page helped fix it:
 https://raspberrypi.stackexchange.com/q ... e086bdccc2
 
+
+I have a Raspberry Pi 2 running Raspbian Jessie with Chromium 45 installed. I found that you need to copy the existing autostart file to your local:
+
+mkdir -p /home/pi/.config/lxsession/LXDE-pi/
+cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+
 In short you need to use the pi user's autostart file in order to launch chromium, not the system wide one.
+
+By default the Pi the auto-logon X environment is done with credentials of the pi user.
+The config setting's of the Xserver environment of this user is in 
+/home/pi/.config/lxsession/LXDE-pi/autostart,
+NOT in /etc/xdg/lxsession/LXDE-pi/autostart 
+(this is the environment for the root user).
 
 
