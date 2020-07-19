@@ -1,0 +1,9 @@
+By default, the Raspberry Pi Desktop does not have any easy-to-use screensaver software installed, 
+although the screensaver is enabled. Firstly, you should install the X Windows screensaver application.
+
+sudo apt install xscreensaver
+This may take a few minutes.
+
+Once this has been installed, you can find the screensaver application 
+under the Preferences option on the main desktop menu. 
+This provides many options for setting up the screensaver, or disabling it completely.
