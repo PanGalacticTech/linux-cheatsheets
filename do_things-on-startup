@@ -1,0 +1,110 @@
+
+
+
+To launch a command automatically on login, put the command into a file named
+.bashrc
+in the user directory (for example /home/pi)
+
+For example, the file could contain
+chromium-browser --kiosk www.google.com
+to launch Chromium in full-screen pointed to www.google.com
+
+IF problem opening from terminal ->
+Try putting the following line just before the one invoking your browser.
+
+export DISPLAY=:1
+
+The line you had which created an error is probably the right command. 
+I am not sure whether 1 is the right display number,
+but I have the above line in my .bashrc on a host box I VNC into, 
+so I can start GUI apps from command line when I want to.
+Since it is coming back with :2100 in your error message, you might try display number :0
+Also, I would be concerned about starting the app from your 
+.bashrc and not ending the line with an ampersand so that 
+.bashrc can finish any other things you might place there in addition, after calling the browser. Otherwise,
+.bashrc will not close until you close chromium.
+
+
+Alternative Method:
+
+install openbox and have openbox open the bowser for you.
+this would give you a fullscreen webbrowser with NOTHING else. no statusbar, no time, no startmenu, nothing but the browser.
+Code: Select all
+
+sudo aptitude install openbox obconf obmenu 
+and then make a openbox config file with
+Code: Select all
+
+mkdir -p ~/.config/openbox && cp /etc/xdg/openbox/* ~/.config/openbox
+Then edit the autostart to openthe browser at boot
+Code: Select all
+
+nano ~/.config/openbox/autostart
+remove all the code and past this in:
+Code: Select all
+
+# Autostart script
+#will sleep to make sure everything else loads
+sleep 5s && midori  --inactivity-reset=120 -e Fullscreen --app=/PATH/TO/HOMEPAGE/FILE.html
+that will make it run with fewer options auto resetting after 2 minutes inactivity
+
+
+Alternative Method 2:
+
+ I have got it working. It seems you can't start chromium from bash as it there is no gui so fails.
+
+I got chromium to start on boot by adding "@chromium --kiosk www.bbc.co.uk" to the "autostart" file in /etc/xdg/lxsession/LXDE/
+
+Alternative Method 3:
+I solved using autostart of LXDE-pi and a sh file with epiphany browser.
+
+I had to install xautomation for simulate an user input
+Code: Select all
+
+sudo aptitude install xautomation
+In the home of pi I've created a sh file
+Code: Select all
+
+touch start_browser.sh
+I've inserted the following code in the file
+Code: Select all
+
+# running the browser on the main desktop
+sudo -u pi epiphany-browser -a --profile ~/.config http://www.google.com/ --display=:0 & 
+# waits a few seconds, we wait that the browser has started successfully   
+sleep 15s;
+# xautomation simulates the pressure on the F11 key for activate the browser in full screen mode on the main desktop
+xte "key F11" -x:0
+I added the executable permission on the sh file with chmod command
+Code: Select all
+
+sudo chmod 755 start_browser.sh
+I've modified the autostart files of LXDE-pi session
+Code: Select all
+
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+by adding the following command to run my sh file
+Code: Select all
+
+@/home/pi/start_browser.sh
+Now our browser should be start in full screen mode at each boot
+
+If it does not, check that the Raspberry's configuration had enabled the boot into the desktop environment
+Code: Select all
+
+sudo raspi-config
+Select: 3 Enable Boot to Desktop/Scratch
+
+Select: Desktop Log in as user 'pi' at the graphical desktop
+
+Enjoy
+
+
+
+Notes#
+Yes I had the same problem and the instructions on this stack overflow page helped fix it:
+https://raspberrypi.stackexchange.com/q ... e086bdccc2
+
+In short you need to use the pi user's autostart file in order to launch chromium, not the system wide one.
+
+
