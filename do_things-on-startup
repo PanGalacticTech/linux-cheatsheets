@@ -1,4 +1,40 @@
+// Final Implementation ~~~~~~~~~~~~~~~~~
 
+
+mkdir -p /home/pi/.config/lxsession/LXDE-pi/
+
+cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+
+So edit this local version:
+
+sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
+
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+#@/home/pi/start_browser.sh
+#@chromium --kiosk http://pangalactictech.com:3000/d/hjBv7igMz/envirostation-ed$
+
+#@xscreensaver -no-splash  # comment this line out to disable screensaver
+@xset s off
+@xset -dpms
+@xset s noblank
+#@chromium-browser --incognito  http://pangalactictech.com:3000/d/hjBv7igMz/env$
+@chromium-browser --incognito --kiosk http://pangalactictech.com:3000/d/hjBv7ig$
+  # load chromium after boot and point to the localhost webserver in full scree$
+@unclutter -idle 20
+#@/home/pi/start_browser.sh   # << if kiosk mode does not work, make sure this file exists and put in command to press F11 instead
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~ NOTES ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 To launch a command automatically on login, put the command into a file named
