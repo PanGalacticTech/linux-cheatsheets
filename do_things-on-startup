@@ -28,6 +28,35 @@ sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 
 
 
+~~~~~~~~~~~~~~~~ Disable Chromium Update Popup: ~~~~~~~~~~~~~~~~~~~~~~~~
+
+chromium-browser --check-for-update-interval=1 --simulate-critical-update
+
+--check-for-update-interval=1 makes chromium check one second after starting. This way, you can see right away if the flag worked or not instead of waiting several hours.
+
+While chromium still thinks there is an update, the popup does not appear by itself. It's just an icon:
+
+
+
+OR ::::
+
+ou could try putting this in /etc/chromium-browser/customizations/01-disable-update-check
+Code: Select all
+
+CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+
+
+OR ::::
+
+You can try launching Chromium browser with --check-for-update-interval=0. I don't know if it will work or not. I'm comfortable simply ignoring the notification. Good luck.
+
+pi@raspberrypi:~ $ cat ~/.local/share/applications/chromium-browser.desktop
+[Desktop Entry]
+
+
+edit line:
+
+Exec=chromium-browser --check-for-update-interval=0 %U
 
 
 
