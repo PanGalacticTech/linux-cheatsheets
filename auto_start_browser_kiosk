@@ -9,7 +9,9 @@ So edit this local version:
 
 sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 
+# Comment out this line to stop desktop environment from loading
 @lxpanel --profile LXDE-pi
+# Comment out this line to stop desktop profile from loading
 @pcmanfm --desktop --profile LXDE-pi
 #@xscreensaver -no-splash
 #@/home/pi/start_browser.sh
@@ -57,6 +59,24 @@ pi@raspberrypi:~ $ cat ~/.local/share/applications/chromium-browser.desktop
 edit line:
 
 Exec=chromium-browser --check-for-update-interval=0 %U
+
+
+OR ::::
+
+4
+
+This Bug seems to be floating around Debian and Raspbian already since Chromium 76.
+
+From the Debian Report I understand it should be fixed with Chromium 78 and the commandline option --disable-component-update should disable it.
+
+But from the thread in the Raspberrypi.org Forums it still seems to appear in Chromium 78 at least on Raspbian. So there the following workaround is proposed:
+
+Create a file /etc/chromium-browser/customizations/01-disable-update-check and set its content to
+
+CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+Or as a copy&paste solution:
+
+sudo touch /etc/chromium-browser/customizations/01-disable-update-check;echo CHROMIUM_FLAGS=\"\$\{CHROMIUM_FLAGS\} --check-for-update-interval=31536000\" | sudo tee /etc/chromium-browser/customizations/01-disable-update-check
 
 
 
