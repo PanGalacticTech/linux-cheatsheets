@@ -100,3 +100,21 @@ If it does nothing, it’s because it’s already installed on your system
 You can now restart your Raspberry Pi to enjoy your new environment 
 
 sudo reboot
+
+
+
+ADDING VNC Server
+
+sudo apt update
+
+sudo apt install realvnc-vnc-server realvnc-vnc-viewer
+
+sudo raspi-config
+
+Navigate to interfacing options and enable VNC
+
+
+
+
+
+
