@@ -1,0 +1,102 @@
+Before starting, I recommend updating your system to avoid any issue later
+
+Type the following command on your Raspberry Pi:
+
+
+{
+
+sudo apt update
+sudo apt upgrade
+sudo apt dist-upgrade
+sudo reboot
+
+}
+
+
+Xorg is the display server on Linux systems
+That’s to say that it’s the core component of any desktop environment
+So whatever the choice you have made, you need to install it first
+
+Xorg is available in the Raspbian repository, you can install it with:
+
+{
+sudo apt install xserver-xorg
+}
+
+
+This will install about 75 new packages on your system, and after a few seconds you are ready to move to the next step
+
+
+Desktop Environment Installation
+Now you need to install the desktop environment you have chosen
+All of them are available in the Raspbian default repository, so you can install it with apt
+Obviously, the command will be different depending on your choice
+
+To install the PIXEL (Default) Desktop, you can type:
+
+{
+sudo apt install raspberrypi-ui-mods
+}
+
+
+This will download over 400 packages with approximately 200M to download
+
+If you prefer KDE, use this command:
+
+{
+sudo apt install kde-plasma-desktop
+}
+
+KDE will take more time to install, as you need to download over 700 packages for more than 500M to download
+And I didn’t test
+
+{
+kde-full
+}
+
+but it’s something like 1500M to download!
+
+
+For LXDE the command is:
+{
+sudo apt install lxde-core lxappearance
+}
+
+This one is lighter, with 100M to download for something like 300 new packages
+
+To install XFCE, enter the following command:
+{
+sudo apt install xfce4 xfce4-terminal
+}
+XFCE is the lightest environment in this list, with less than 300 packages (90M to download)
+
+And finally, the MATE desktop installation can be done with:
+{
+sudo apt install mate-desktop-environment-core
+}
+
+For this one, it’s about 320 packages for 170M on a fresh new Raspbian Buster Lite
+You’re almost ready, but don’t reboot the Raspberry Pi right now
+For some of them, you’ll need another package 
+
+
+
+LightDM
+As I told you in introduction, LightDM is the display manager
+This package is mandatory to automatically start the desktop environment on boot and also manage the login part
+It’s the link between everything if you want (Raspbian, Xorg and your desktop environment)
+
+When I made my tests, most of the previous commands will install LightDM automatically
+But you may need it at least for MATE and KDE
+
+To install it, just use the following command:
+
+{
+sudo apt install lightdm
+}
+
+If it does nothing, it’s because it’s already installed on your system
+
+You can now restart your Raspberry Pi to enjoy your new environment 
+
+sudo reboot
