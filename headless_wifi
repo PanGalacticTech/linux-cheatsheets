@@ -21,4 +21,6 @@ country=GB
 network={
  ssid="<Name of your wireless LAN>"
  psk="<Password for your wireless LAN>"
+ # Following line added later:
+ key_mgmt=WPA-PSK
 }
