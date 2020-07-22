@@ -138,7 +138,7 @@ sudo apt-get install --no-install-recommends xserver-xorg
 
 The next (recommended) step is to install xinit which enables you to launch the Xorg Display Server from the command line (with startx)
 
-sudo apt-get install --no-install-recommends xinit
+sudo apt-get install --no-install-recommends xinit                        <<<< ALL I DID TO MAKE WORK (after attempt 1) <<<< IS THIS LINE >>> THEN SEE HINT 2
 
 Install PIXEL, which is the official Raspbian desktop environment
 included with the full version of Raspbian. 
@@ -178,7 +178,19 @@ Do not try and install KDE.
 
 
 
+HINT 2:
 
-https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691  << Read this for help
+if "desktop unavailable" in VNC:
+
+edit /boot/config.txt
+uncomment:
+HDMI Safe Mode:
+
+This made it work for me.
+
+
+
+https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691  << Read this for help if still not working
+but didnt need to do that yet. Next time will because this was a pain in the ass.
 
 
