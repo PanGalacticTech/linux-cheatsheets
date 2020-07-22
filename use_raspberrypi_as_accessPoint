@@ -1,0 +1,100 @@
+Update & Upgrade before starting
+
+
+
+These are the two programs we’re going to use to make your Raspberry Pi into a wireless access point. To get them, just type these lines into the terminal:
+
+sudo apt-get install hostapd
+sudo apt-get install dnsmasq
+
+
+Both times, you’ll have to hit y to continue.
+hostapd is the package that lets us create a wireless hotspot using a Raspberry Pi, 
+and dnsmasq is an easy-to-use DHCP and DNS server.
+
+We’re going to edit the programs’ configuration files in a moment, so let’s turn the programs off
+before we start tinkering:
+
+sudo systemctl stop hostapd
+sudo systemctl stop dnsmasq
+
+
+For our purposes here, I’m assuming that we’re using the standard home network IP addresses, like 192.168.###.###. Given that assumption, let’s assign the IP address 192.168.0.10 to the wlan0
+interface by editing the dhcpcd configuration file. 
+
+Start by copying the dhcpcd.conf file for later to easily revert settings to normal
+
+cd /etc/
+
+cp dhcpcd.conf dhcpcd.conf.safe
+
+
+Start editing with this command:
+
+sudo nano /etc/dhcpcd.conf
+Now that you’re in the file, add the following lines at the end:
+
+interface wlan0
+static ip_address=192.168.75.10/24
+denyinterfaces eth0
+denyinterfaces wlan0
+
+(The last two lines are needed in order to make our bridge work –- but more on that in
+Step 8.)
+
+
+
+
+We’re going to use dnsmasq as our DHCP server. The idea of a DHCP server is to
+dynamically distribute network configuration parameters, such as IP addresses, for
+interfaces and services.
+
+dnsmasq’s default configuration file contains a lot of unnecessary information, so
+it’s easier for us to start from scratch. Let’s rename the default configuration file and
+write a new one:
+
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+sudo nano /etc/dnsmasq.conf
+
+You’ll be editing a new file now, and with the old one renamed, 
+this is the config file that dnsmasq will use. 
+Type these lines into your new configuration file:
+
+interface=wlan0
+dhcp-range=192.168.75.11,192.168.75.30,255.255.255.0,24h
+
+
+The lines we added mean that we’re going to provide IP addresses between
+192.168.0.11 and 192.168.0.30 
+for the wlan0 interface.
+
+
+Another config file! This time, we’re messing with the hostapd config file. Open ‘er up:
+
+sudo nano /etc/hostapd/hostapd.conf
+
+This should create a brand new file. Type in this:
+
+interface=wlan0
+bridge=br0
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+ssid=NETWORK
+wpa_passphrase=PASSWORD
+
+
+Note that where I have “NETWORK” and “PASSWORD,” you should come up with your own names. This is how you’ll join the Pi’s network from other devices.
+
+sudo nano /etc/default/hostapd
+
+
+
+
