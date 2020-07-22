@@ -102,6 +102,24 @@ You can now restart your Raspberry Pi to enjoy your new environment
 sudo reboot
 
 
+Set Up StartX
+
+When we want to startx to KDE we just need to add one line to /etc/sysconfig/desktop: << This file does not exist in raspberrypi OS
+
+DESKTOP="KDE"
+If there is already one line that defines “DESKTOP”, just change the value of it.
+
+Then we will start KDE when we run startx from console.
+
+Free additional gift
+
+The “DISPLAYMANAGER” in the /etc/sysconfig/desktop file is used to specify the default display manager. To make KDM the default display, just add this line:
+
+DISPLAYMANAGER="KDE"
+
+
+
+
 
 ADDING VNC Server
 
@@ -115,6 +133,8 @@ Navigate to interfacing options and enable VNC
 
 
 
+HINT:
 
+Do not try and install KDE.
 
 
