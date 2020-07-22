@@ -21,8 +21,10 @@ Xorg is available in the Raspbian repository, you can install it with:
 
 {
 sudo apt install xserver-xorg
+#### sudo apt-get install --no-install-recommends xserver-xorg ###
 }
 
+#### sudo apt-get install --no-install-recommends xinit ####
 
 This will install about 75 new packages on your system, and after a few seconds you are ready to move to the next step
 
@@ -119,6 +121,43 @@ DISPLAYMANAGER="KDE"
 
 
 
+^^^^^ This lot did not work
+
+Trying again >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+The steps below install PIXEL, the official Raspbian desktop environment included with the full version of Raspbian.
+
+After installing Raspbian Lite, setup your password, enable ssh, configure Locale and network etc.
+
+Ensure Raspbian is updated to the latest software.
+
+The essential step is to install the Xorg Display Server
+
+sudo apt-get install --no-install-recommends xserver-xorg
+
+The next (recommended) step is to install xinit which enables you to launch the Xorg Display Server from the command line (with startx)
+
+sudo apt-get install --no-install-recommends xinit
+
+Install PIXEL, which is the official Raspbian desktop environment
+included with the full version of Raspbian. 
+(This step takes quite a while.)
+
+sudo apt-get install raspberrypi-ui-mods
+
+The raspberrypi-ui-mods installs the PIXEL desktop environment,
+Openbox Window Manager and LightDM Login Manager.
+
+This is a bare bones installation. Included is a Terminal, File Manager,
+and tools to manage the desktop environment, plus a few Panel icons
+(Bluetooth, Network, Audio, CPU, Clock).
+
+
+
+
+
+
 
 
 ADDING VNC Server
@@ -136,5 +175,8 @@ Navigate to interfacing options and enable VNC
 HINT:
 
 Do not try and install KDE.
+
+
+
 
 
