@@ -117,5 +117,26 @@ cp -v file1 file2
 cp -avr dir2 /backups/
   
   
-  
+  mkdir [OPTION]... DIRECTORY...
+Description
+
+ 
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+
+-m, --mode=MODE
+set file mode (as in chmod), not a=rwx - umask
+
+-p, --parents
+no error if existing, make parent directories as needed
+
+-v, --verbose
+print a message for each created directory
+
+-Z, --context=CTX
+set the SELinux security context of each created directory to CTX
+
+--help
+display this help and exit
   
