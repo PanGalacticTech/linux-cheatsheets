@@ -1,0 +1,13 @@
+
+
+// Restarting DHCP
+
+After you connected to the router. Please try: ifdown eth0 && sleep 2 && ifup eth0
+htop shows dhclient running, right? The above should re-initiate the DHCP client as well.
+
+You can check the currently applied (or not applied) IP via: ip a
+
+And you can manually run dhclient as well: dhclient eth0
+
+journalctl might as well give some hints. When connecting the device to the router and trying the above to re-init the interface you could check the journal (end of log) for possible error messages.
+Top
