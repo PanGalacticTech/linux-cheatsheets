@@ -3,6 +3,21 @@
 sudo adduser [NAME]
 
 
+Use the usermod command to add the user to the sudo group.
+
+usermod -aG sudo username
+By default, on Ubuntu, members of the sudo group have sudo privileges.
+
+Test sudo access on new user account
+
+Use the su command to switch to the new user account.
+
+su - username
+
+Then test sudo privilages on new account
+
+
+to make a user root privilages:
 Open a Root Terminal and type visudo (to access and edit the list)
 Using the up/down arrows, navigate to the bottom of the sudoers file that is now displayed in the terminal
 Just under the line that looks like the following:
