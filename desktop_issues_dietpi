@@ -1,0 +1,15 @@
+ /dev/tty0 is accessible for root only. Therefore dietpi user should not be able to open a xsession.
+
+Anyway you get a different error massage (EE) no screens found(EE) than I would expect. Pls can you past the entire log file
+
+cat /home/dietpi/.local/share/xorg/Xorg.0.log
+
+
+
+ok to bypass the permission issue of non-root user, you could do following
+
+apt update && apt install xserver-xorg-legacy
+nano /etc/X11/Xwrapper.config
+adjust to allowed_users=anybody
+
+On my RPi3B+ I'm able to execute startx as dietpi user now .
