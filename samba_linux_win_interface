@@ -98,3 +98,9 @@ To Access the same folder from a Ubuntu machine  simply open files and folders a
 
 ubuntu share
 A reminder again that this is a very permissive share and I would strongly advise against leaving it this open, if you plan to connect the Pi to the internet or you’re going to store any particularly sensitive information.
+
+
+// Create a user with a new password for samba
+
+sudo smbpasswd -a pi
+to create the pi samba user. On the Windows, I just use RASPBERRYPI\pi as the user, type in the password and it works.
