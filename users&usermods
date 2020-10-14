@@ -1,3 +1,7 @@
+#Add new Users:
+
+sudo adduser [NAME]
+
 List all users using /etc/passwd file
 
 use cat or less
