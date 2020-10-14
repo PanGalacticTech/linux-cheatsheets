@@ -217,3 +217,9 @@ NOT in /etc/xdg/lxsession/LXDE-pi/autostart
 (this is the environment for the root user).
 
 
+// Auto Refresh Web Browser
+
+Also, if you just need to refresh a local html file then just embed the following meta line in your html file:
+
+<META HTTP-EQUIV="refresh" CONTENT="30"> <! -- This is to force refresh of this page every 30 seconds>
+
