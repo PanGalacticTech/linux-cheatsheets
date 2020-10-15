@@ -27,7 +27,23 @@ sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 @unclutter -idle 20
 #@/home/pi/start_browser.sh   # << if kiosk mode does not work, make sure this file exists and put in command to press F11 instead
 
+--------------------------------------------------------------------------------------------------sudo 
+// To Disable the Mouse Cursor (untill movement)
 
+One option would be to install unclutter.
+
+sudo apt update
+sudo apt install unclutter
+
+
+unclutter -idle 20     // Number of seconds cursor remains on screen before timeout
+
+The mouse pointer will appear when moved.
+
+The command can be put in autostart
+Code: Select all
+
+/etc/xdg/lxsession/LXDE-pi/autostart
 
 
 ~~~~~~~~~~~~~~~~ Disable Chromium Update Popup: ~~~~~~~~~~~~~~~~~~~~~~~~
