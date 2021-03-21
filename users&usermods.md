@@ -48,7 +48,7 @@ Enter into terminal:
 
 `sudo visudo`
 
-Add to end of file:
+Add to end of file (replace <user> with username): 
 
 `<user> ALL=(ALL) NOPASSWD: All`
 
