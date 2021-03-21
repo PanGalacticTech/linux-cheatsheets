@@ -22,7 +22,11 @@ Then test sudo privilages on new account
 
 To make a user root privilages:
 
-Open a Root Terminal and type visudo (to access and edit the list)
+Open a Root Terminal and type:
+
+`sudo visudo` 
+
+to access and edit the list
 
 Using the up/down arrows, navigate to the bottom of the sudoers file that is now displayed in the terminal
 Just under the line that looks like the following:
