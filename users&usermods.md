@@ -1,7 +1,6 @@
 # User Management in Linux
 
-
-## Add New Users:
+## Add New Users
 
 `sudo adduser [NAME]`
 
@@ -42,6 +41,7 @@ That's it, your new user now has root privileges!
 ## Removing Password for Sudoers
 
 Enter into terminal:
+
 `sudo visudo`
 
 Add to end of file:
