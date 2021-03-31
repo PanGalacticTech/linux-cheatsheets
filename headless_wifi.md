@@ -16,16 +16,16 @@ and use those settings to start up wireless networking.
 ## wpa_supplicant.conf file example
 
 
-> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev 
-> update_config=1
-> country=GB
-> 
-> network={
-> ssid="<Name of your wireless LAN>"
-> psk="<Password for your wireless LAN>"
-> # Following line added later:
-> key_mgmt=WPA-PSK
-> }
+> ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev    <br>
+> update_config=1                                            <br>
+> country=GB                                                 <br>
+>                                                            <br>
+> network={                                                  <br>
+> ssid="<Name of your wireless LAN>"                         <br>
+> psk="<Password for your wireless LAN>"                     <br>
+> `# Following line added later:`                            <br>
+> key_mgmt=WPA-PSK                                           <br>
+> }                                                          <br>  <br>
 
 
 
