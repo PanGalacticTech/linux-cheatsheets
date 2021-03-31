@@ -21,8 +21,8 @@ and use those settings to start up wireless networking.
 > country=GB                                                 <br>
 >                                                            <br>
 > network={                                                  <br>
-> ssid="<Name of your wireless LAN>"                         <br>
-> psk="<Password for your wireless LAN>"                     <br>
+> ssid="[Name of your wireless LAN]"                         <br>
+> psk="[Password for your wireless LAN]"                     <br>
 > `# Following line added later:`                            <br>
 > key_mgmt=WPA-PSK                                           <br>
 > }                                                          <br>  <br>
