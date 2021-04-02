@@ -66,6 +66,14 @@ Add the following section
 > `public=no           ` <br><br> 
   
  
+ Also added, unsure of its source:
+ 
+> `inherit acls = yes`   <br> 
+> `read only = no`        <br>
+> `force user = skyrora`    <br>
+> `force group = skyrora`    <br>
+ 
+ 
  
 We now need to exit out of nano so Ctrl + X and save it.
 
