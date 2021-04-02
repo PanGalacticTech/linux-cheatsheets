@@ -35,7 +35,7 @@ This how-to primarily about creating a share to enable easy access to your Pi ov
 We now need to edit the samba configuration file, so we’ll open the file in nano
 
 
-> `SHELL` <br>
+> SHELL <br>
 > `sudo nano /etc/samba/smb.conf`   <br><br>
 
 
@@ -44,7 +44,7 @@ We need to edit this file in a few locations.
 
 Firstly, because we are going to access the Pi from a Windows 8 computer, we’ll need to change
 
-> `SHELL`   <br>
+> SHELL  <br>
 > `# Change the setting`   <br>
 > `# Change this to the workgroup/NT-domain name your Samba server will part of `  <br>
 > `workgroup = WORKGROUP` <br>
@@ -53,7 +53,7 @@ Firstly, because we are going to access the Pi from a Windows 8 computer, we’l
 Add the following section
 
 
-> `SHELL    ` <br>
+> SHELL <br>
 > `[PiShare]  `   <br>
 > ` comment=Raspberry Pi Share`    <br>
 > ` path=/home/pi/public `   <br>
@@ -76,7 +76,7 @@ SHELL
 
 We should see something like this
 
-> `SHELL`    <br>
+> SHELL    <br>
 > `Load smb config files from /etc/samba/smb.conf`       <br>
 > `rlimit_max: increasing rlimit_max (1024) to minimum Windows limit (16384)`       <br>
 > `Processing section "[homes]"`       <br>
