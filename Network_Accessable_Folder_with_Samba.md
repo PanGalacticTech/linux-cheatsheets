@@ -70,8 +70,8 @@ Add the following section
  
 > `inherit acls = yes`   <br> 
 > `read only = no`        <br>
-> `force user = skyrora`    <br>
-> `force group = skyrora`    <br>
+> `force user = [USER]`    <br>
+> `force group = [USER GROUP] `    <br><br>
  
  
  
