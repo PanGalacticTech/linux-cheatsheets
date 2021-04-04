@@ -42,7 +42,7 @@ To **Delete** a Directory
 
 For an **empty** directory:
 
-`rmdir`<br>
+`rmdir <directory>`<br>
 
 For a directory that is not empty:
 use rm with recursive (-r) flag
