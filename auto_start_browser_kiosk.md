@@ -1,16 +1,23 @@
-// Final Implementation ~~~~~~~~~~~~~~~~~
+# Auto Boot in Kiosk Mode
 
+First make a directory for our login settings for user pi
+```
+mkdir -p /home/pi/.config/lxsession/LXDE-pi/ 
+```
 
-mkdir -p /home/pi/.config/lxsession/LXDE-pi/
+Copy autostart file into the directory we just created.
+```
+cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart 
+```
 
-cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
-
-So edit this local version:
-
+Edit this local version:
+```
 sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
-
+```
+### Autostart Document Contents
+ ```
 # Comment out this line to stop desktop environment from loading
-@lxpanel --profile LXDE-pi
+ @lxpanel --profile LXDE-pi`
 # Comment out this line to stop desktop profile from loading
 @pcmanfm --desktop --profile LXDE-pi
 #@xscreensaver -no-splash
@@ -24,97 +31,117 @@ sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 #@chromium-browser --incognito  http://pangalactictech.com:3000/d/hjBv7igMz/env$
 @chromium-browser --incognito --kiosk http://pangalactictech.com:3000/d/hjBv7ig$
   # load chromium after boot and point to the localhost webserver in full scree$
-@unclutter -idle 20
+@unclutter -idle 20           # Sets unclutter to hide mouse if no movement
 #@/home/pi/start_browser.sh   # << if kiosk mode does not work, make sure this file exists and put in command to press F11 instead
 
---------------------------------------------------------------------------------------------------sudo 
-// To Disable the Mouse Cursor (untill movement)
+```
+
+--------------------------------------------------------------------------------------------------
+## To Disable the Mouse Cursor (until movement)
 
 One option would be to install unclutter.
 
+```
 sudo apt update
 sudo apt install unclutter
+```
 
-
-unclutter -idle 20     // Number of seconds cursor remains on screen before timeout
+`unclutter -idle 20     // Number of seconds cursor remains on screen before timeout`
 
 The mouse pointer will appear when moved.
 
-The command can be put in autostart
-Code: Select all
+The command can be put in autostart file (See Above)
 
-/etc/xdg/lxsession/LXDE-pi/autostart
+`/etc/xdg/lxsession/LXDE-pi/autostart`
+
+_____________________________________________________________________________________
+# Disable Chromium Update Popup:
+
+This is a bug shown by some versions of chromium, the message is impossible to get rid of as the latest version <br>
+of chromium is not alwauys available for ARM processors.
 
 
-~~~~~~~~~~~~~~~~ Disable Chromium Update Popup: ~~~~~~~~~~~~~~~~~~~~~~~~
+`chromium-browser --check-for-update-interval=1 --simulate-critical-update` <br><br>
 
-chromium-browser --check-for-update-interval=1 --simulate-critical-update
+Makes chromium check one second after starting. This way, you can see right away if the flag worked or not instead of waiting several hours.
 
---check-for-update-interval=1 makes chromium check one second after starting. This way, you can see right away if the flag worked or not instead of waiting several hours.
+`--check-for-update-interval=1` <br>
+
 
 While chromium still thinks there is an update, the popup does not appear by itself. It's just an icon:
 
+<br>
 
+### OR ::::
 
-OR ::::
-
-ou could try putting this in /etc/chromium-browser/customizations/01-disable-update-check
+you could try putting this in /etc/chromium-browser/customizations/01-disable-update-check
 Code: Select all
 
 CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
 
 
-OR ::::
+### OR ::::
 
-You can try launching Chromium browser with --check-for-update-interval=0. I don't know if it will work or not. I'm comfortable simply ignoring the notification. Good luck.
-
+You can try launching Chromium browser with --check-for-update-interval=0. I don't know if it will work or not.
+I'm comfortable simply ignoring the notification. Good luck.
+```
 pi@raspberrypi:~ $ cat ~/.local/share/applications/chromium-browser.desktop
+```
 [Desktop Entry]
 
-
 edit line:
-
+```
 Exec=chromium-browser --check-for-update-interval=0 %U
+```
 
-
-OR ::::
-
-4
+## OR ::::
 
 This Bug seems to be floating around Debian and Raspbian already since Chromium 76.
 
-From the Debian Report I understand it should be fixed with Chromium 78 and the commandline option --disable-component-update should disable it.
+From the Debian Report I understand it should be fixed with Chromium 78 and the commandline option
+--disable-component-update should disable it.
 
-But from the thread in the Raspberrypi.org Forums it still seems to appear in Chromium 78 at least on Raspbian. So there the following workaround is proposed:
+But from the thread in the Raspberrypi.org Forums it still seems to appear in Chromium 78 at least on Raspbian. 
+So there the following workaround is proposed:
 
-Create a file /etc/chromium-browser/customizations/01-disable-update-check and set its content to
+Create a file:
+```
+/etc/chromium-browser/customizations/01-disable-update-check
+```
 
+and set its content to:
+```
 CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+```
+
 Or as a copy&paste solution:
 
+```
 sudo touch /etc/chromium-browser/customizations/01-disable-update-check;echo CHROMIUM_FLAGS=\"\$\{CHROMIUM_FLAGS\} --check-for-update-interval=31536000\" | sudo tee /etc/chromium-browser/customizations/01-disable-update-check
+```
 
 
+_____________________________________________________________________________________
 
 
-
-
-~~~~~~~~~~~~~~~~ NOTES ~~~~~~~~~~~~~~~~~~~~~~~~~~
+## NOTES on Autostarting Scripts
 
 
 To launch a command automatically on login, put the command into a file named
-.bashrc
+`.bashrc` <br>
 in the user directory (for example /home/pi)
 
 For example, the file could contain
+```
 chromium-browser --kiosk www.google.com
+```
 to launch Chromium in full-screen pointed to www.google.com
 
 IF problem opening from terminal ->
 Try putting the following line just before the one invoking your browser.
-
+```
 export DISPLAY=:1
-
+```
 The line you had which created an error is probably the right command. 
 I am not sure whether 1 is the right display number,
 but I have the above line in my .bashrc on a host box I VNC into, 
@@ -126,83 +153,103 @@ Also, I would be concerned about starting the app from your
 .bashrc will not close until you close chromium.
 
 
-Alternative Method:
+## Alternative Method:
 
 install openbox and have openbox open the bowser for you.
 this would give you a fullscreen webbrowser with NOTHING else. no statusbar, no time, no startmenu, nothing but the browser.
 Code: Select all
 
+```
 sudo aptitude install openbox obconf obmenu 
+```
 and then make a openbox config file with
-Code: Select all
 
+```
 mkdir -p ~/.config/openbox && cp /etc/xdg/openbox/* ~/.config/openbox
+```
+
 Then edit the autostart to openthe browser at boot
-Code: Select all
 
+```
 nano ~/.config/openbox/autostart
+```
 remove all the code and past this in:
-Code: Select all
-
+```
 # Autostart script
 #will sleep to make sure everything else loads
 sleep 5s && midori  --inactivity-reset=120 -e Fullscreen --app=/PATH/TO/HOMEPAGE/FILE.html
+```
 that will make it run with fewer options auto resetting after 2 minutes inactivity
 
 
-Alternative Method 2:
+## Alternative Method 2:
 
- I have got it working. It seems you can't start chromium from bash as it there is no gui so fails.
+I have got it working. It seems you can't start chromium from bash as it there is no gui so fails.
 
-I got chromium to start on boot by adding "@chromium --kiosk www.bbc.co.uk" to the "autostart" file in /etc/xdg/lxsession/LXDE/
+I got chromium to start on boot by adding
+```
+"@chromium --kiosk www.bbc.co.uk" 
+```
+to the "autostart" file in /etc/xdg/lxsession/LXDE/
 
-Alternative Method 3:
+## Alternative Method 3:
+
 I solved using autostart of LXDE-pi and a sh file with epiphany browser.
 
 I had to install xautomation for simulate an user input
-Code: Select all
 
+```
 sudo aptitude install xautomation
+```
+
 In the home of pi I've created a sh file
-Code: Select all
 
+```
 touch start_browser.sh
-I've inserted the following code in the file
-Code: Select all
+```
 
+I've inserted the following code in the file
+
+```
 # running the browser on the main desktop
 sudo -u pi epiphany-browser -a --profile ~/.config http://www.google.com/ --display=:0 & 
 # waits a few seconds, we wait that the browser has started successfully   
 sleep 15s;
 # xautomation simulates the pressure on the F11 key for activate the browser in full screen mode on the main desktop
 xte "key F11" -x:0
+```
+
 I added the executable permission on the sh file with chmod command
-Code: Select all
 
+```
 sudo chmod 755 start_browser.sh
+```
 I've modified the autostart files of LXDE-pi session
-Code: Select all
 
+```
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+```
 by adding the following command to run my sh file
-Code: Select all
 
+```
 @/home/pi/start_browser.sh
+```
+
 Now our browser should be start in full screen mode at each boot
 
 If it does not, check that the Raspberry's configuration had enabled the boot into the desktop environment
-Code: Select all
-
+```
 sudo raspi-config
+```
 Select: 3 Enable Boot to Desktop/Scratch
 
 Select: Desktop Log in as user 'pi' at the graphical desktop
 
 Enjoy
 
+_____________________________________________________________________________________
 
-
-// THIS BIT WORKED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## THIS BIT WORKED 
 
 Notes#
 Yes I had the same problem and the instructions on this stack overflow page helped fix it:
