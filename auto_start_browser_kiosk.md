@@ -75,9 +75,9 @@ While chromium still thinks there is an update, the popup does not appear by its
 ### OR ::::
 
 you could try putting this in /etc/chromium-browser/customizations/01-disable-update-check
-Code: Select all
 
-CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+
+`CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"`
 
 
 ### OR ::::
