@@ -18,6 +18,7 @@ Include hidden files
 `ls -a`<br>
 
 List ownership:
+
 `ls -l`<br>
   
 These can be combined
@@ -44,6 +45,7 @@ For an **empty** directory:
 
 For a directory that is not empty:
 use rm with recursive (-r) flag
+
 `rm -r` <br><br>
 
 ## File Manipulation
