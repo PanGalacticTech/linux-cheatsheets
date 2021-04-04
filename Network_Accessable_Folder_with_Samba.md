@@ -135,6 +135,17 @@ or
 
 `sudo /etc/init.d/smbd stop` <br><br>
 
+
+Remember to disable on startup:
+
+`update-rc.d -f smbd defaults ` or `sudo update-rc.d -f smbd remove `
+
+or
+
+`echo 'manual' | sudo tee /etc/init/smbd.conf`
+
+## Restarting Samba Server
+
 To restart samba service
 
 `sudo service smbd start`
@@ -144,6 +155,9 @@ or
 `sudo /etc/init.d/smbd start` <br><br>
 
 
+Remember to enable on startup:
+
+`sudo update-rc.d smbd defaults` <br><br>
 
 
 ## Issues
