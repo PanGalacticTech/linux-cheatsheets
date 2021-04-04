@@ -14,14 +14,16 @@ list files:
 `ls`  <br>
   
 Include hidden files 
+
 `ls -a`<br>
 
 List ownership:
 `ls -l`<br>
   
 These can be combined
+
  `ls -la`<br>
-  or 
+  or  <br>
   `ls -al`<br>
 
 
