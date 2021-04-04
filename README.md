@@ -41,6 +41,7 @@ To **move or rename** Directory:
 To **Delete** a Directory
 
 For an **empty** directory:
+
 `rmdir`<br>
 
 For a directory that is not empty:
