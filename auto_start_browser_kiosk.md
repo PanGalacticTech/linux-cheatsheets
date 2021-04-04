@@ -55,6 +55,16 @@ The command can be put in autostart file (See Above)
 `/etc/xdg/lxsession/LXDE-pi/autostart`
 
 _____________________________________________________________________________________
+
+## Auto Refresh Web Browser
+
+For auto refreshing of a local HTML file that we are able to edit:
+
+if we just need to refresh a local html file then just embed the following meta line in your html file:
+```
+<META HTTP-EQUIV="refresh" CONTENT="30"> <! -- This is to force refresh of this page every 30 seconds>
+```
+_____________________________________________________________________________________
 # Disable Chromium Update Popup:
 
 This is a bug shown by some versions of chromium, the message is impossible to get rid of as the latest version <br>
@@ -249,7 +259,7 @@ Enjoy
 
 _____________________________________________________________________________________
 
-## THIS BIT WORKED 
+## THIS BIT WORKED - Note this is the 1st example above
 
 Notes#
 Yes I had the same problem and the instructions on this stack overflow page helped fix it:
@@ -280,9 +290,5 @@ NOT in /etc/xdg/lxsession/LXDE-pi/autostart
 (this is the environment for the root user).
 
 
-// Auto Refresh Web Browser
 
-Also, if you just need to refresh a local html file then just embed the following meta line in your html file:
-
-<META HTTP-EQUIV="refresh" CONTENT="30"> <! -- This is to force refresh of this page every 30 seconds>
 
