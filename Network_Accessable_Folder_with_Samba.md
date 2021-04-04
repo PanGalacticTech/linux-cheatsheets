@@ -7,7 +7,7 @@ Essentially Samba is a little bit of open source goodness that enables linux and
 Installing Samba is fairly trivial task and involves you only running 3 commands in the terminal window on your Raspberry Pi.
 
 
-> SHELL   
+  
 ```
 sudo apt-get update
 sudo apt-get install samba # Answer Yes to DHCP
@@ -22,8 +22,8 @@ Create a folder you will use to share and configure samba to share your folder.
 Create Public folder to share
 Creating a folder to share is really easy, we’ll just create a folder and call it public. 
 
-> SHELL  <br>
-> `mkdir public`  <br><br>
+
+`mkdir public`  <br><br>
 
 
 ### Warning:
@@ -37,8 +37,7 @@ This how-to primarily about creating a share to enable easy access to your Pi ov
 We now need to edit the samba configuration file, so we’ll open the file in nano
 
 
-> SHELL <br>
-> `sudo nano /etc/samba/smb.conf`   <br><br>
+`sudo nano /etc/samba/smb.conf`   <br><br>
 
 
 
@@ -46,9 +45,9 @@ We need to edit this file in a few locations.
 
 Firstly, because we are going to access the Pi from a Windows 8 computer, we’ll need to change
 
-> SHELL  
+  
 ```
- # Change the setting
+# Change the setting
 # Change this to the workgroup/NT-domain name your Samba server will part of 
 workgroup = WORKGROUP
 wins support = yes
@@ -83,12 +82,12 @@ We now need to exit out of nano so Ctrl + X and save it.
 
 We’ll run a check on the config file to ensure we haven’t broken anything
 
-SHELL
+
 `testparm` <br><br>
 
 We should see something like this
 
-SHELL   
+  
 ```
 Load smb config files from /etc/samba/smb.conf
 rlimit_max: increasing rlimit_max (1024) to minimum Windows limit (16384)
