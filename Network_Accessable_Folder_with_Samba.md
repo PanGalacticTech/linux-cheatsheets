@@ -7,12 +7,14 @@ Essentially Samba is a little bit of open source goodness that enables linux and
 Installing Samba is fairly trivial task and involves you only running 3 commands in the terminal window on your Raspberry Pi.
 
 
-> SHELL   <br>
-> `sudo apt-get update`  <br>
-> `sudo apt-get install samba # Answer Yes to DHCP`   <br>
-> `sudo apt-get install samba-common-bin`  <br><br>
+> SHELL   
+```
+sudo apt-get update
+sudo apt-get install samba # Answer Yes to DHCP
+sudo apt-get install samba-common-bin
+```
 
-
+<br><br>
 After we’ve installed samba on our pi, we need to carry out 2 configuration steps.
 
 Create a folder you will use to share and configure samba to share your folder.
@@ -44,35 +46,37 @@ We need to edit this file in a few locations.
 
 Firstly, because we are going to access the Pi from a Windows 8 computer, we’ll need to change
 
-> SHELL  <br>
-> `# Change the setting`   <br>
-> `# Change this to the workgroup/NT-domain name your Samba server will part of `  <br>
-> `workgroup = WORKGROUP` <br>
-> `wins support = yes`  <br> <br>
+> SHELL  
+```
+ # Change the setting
+# Change this to the workgroup/NT-domain name your Samba server will part of 
+workgroup = WORKGROUP
+wins support = yes
+```
 
 Add the following section
 
-
-> SHELL <br>
-> `[PiShare]  `   <br>
-> ` comment=Raspberry Pi Share`    <br>
-> ` path=/home/pi/public `   <br>
-> `browseable=Yes `     <br>
-> `writeable=Yes`       <br>
-> `only guest=no  `     <br>
-> `create mask=0777   ` <br>
-> `directory mask=0777   `  <br>
-> `directory mask=0777   `  <br>
-> `public=no           ` <br><br> 
-  
+SHELL
+```
+[PiShare]   
+comment=Raspberry Pi Share  
+path=/home/pi/public 
+browseable=Yes 
+writeable=Yes
+only guest=no  
+create mask=0777  
+directory mask=0777  
+directory mask=0777   
+public=no       
+```  
  
  Also added, unsure of its source:
- 
-> `inherit acls = yes`   <br> 
-> `read only = no`        <br>
-> `force user = [USER]`    <br>
-> `force group = [USER GROUP] `    <br><br>
- 
+```
+inherit acls = yes
+read only = no
+force user = [USER]
+force group = [USER GROUP]
+```
  
  
 We now need to exit out of nano so Ctrl + X and save it.
@@ -84,16 +88,17 @@ SHELL
 
 We should see something like this
 
-> SHELL    <br>
-> `Load smb config files from /etc/samba/smb.conf`       <br>
-> `rlimit_max: increasing rlimit_max (1024) to minimum Windows limit (16384)`       <br>
-> `Processing section "[homes]"`       <br>
-> `Processing section "[printers]"`       <br>
-> `Processing section "[print$]"`       <br>
-> `Processing section "[public]"`       <br>
-> `Loaded services file OK.`       <br>
-> `Server role: ROLE_STANDALONE`       <br>       <br>
-
+SHELL   
+```
+Load smb config files from /etc/samba/smb.conf
+rlimit_max: increasing rlimit_max (1024) to minimum Windows limit (16384)
+Processing section "[homes]"
+Processing section "[printers]"
+Processing section "[print$]"
+Processing section "[public]"
+Loaded services file OK.
+Server role: ROLE_STANDALONE
+```
 
 Press enter to see a dump of your service definitions
 Your Pi should now be sharing files on the network!
@@ -119,3 +124,28 @@ A reminder again that this is a very permissive share and I would strongly advis
 `sudo smbpasswd -a pi`
 
 to create the pi samba user. On the Windows, I just use RASPBERRYPI\pi as the user, type in the password and it works.
+
+## Disabling Samba Server
+
+To stop samba service
+
+`sudo service smbd stop`
+
+or
+
+`sudo /etc/init.d/smbd stop` <br><br>
+
+To restart samba service
+
+`sudo service smbd start`
+
+or
+
+`sudo /etc/init.d/smbd start` <br><br>
+
+
+
+
+## Issues
+
+Found muliple instances of samba do not work on the same LAN network.
