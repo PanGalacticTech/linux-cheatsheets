@@ -37,7 +37,7 @@ sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 ```
 
 --------------------------------------------------------------------------------------------------
-## To Disable the Mouse Cursor (until movement)
+# To Disable the Mouse Cursor (until movement)
 
 One option would be to install unclutter.
 
@@ -56,7 +56,7 @@ The command can be put in autostart file (See Above)
 
 _____________________________________________________________________________________
 
-## Auto Refresh Web Browser
+# Auto Refresh Web Browser
 
 For auto refreshing of a local HTML file that we are able to edit:
 
@@ -134,7 +134,7 @@ sudo touch /etc/chromium-browser/customizations/01-disable-update-check;echo CHR
 _____________________________________________________________________________________
 
 
-## NOTES on Autostarting Scripts
+# NOTES on Autostarting Scripts
 
 
 To launch a command automatically on login, put the command into a file named
@@ -162,10 +162,15 @@ Also, I would be concerned about starting the app from your
 .bashrc can finish any other things you might place there in addition, after calling the browser. Otherwise,
 .bashrc will not close until you close chromium.
 
+__________________________________________________________________________________
 
-## Alternative Method:
+# Alternative Methods:
 
-install openbox and have openbox open the bowser for you.
+These are all other methods I found to do a similar thing with kiosk mode, but I settled on the one outlined above
+
+## Alternative Method 1 - Using Openbox
+
+Install openbox and have openbox open the bowser for you.
 this would give you a fullscreen webbrowser with NOTHING else. no statusbar, no time, no startmenu, nothing but the browser.
 Code: Select all
 
@@ -192,15 +197,20 @@ sleep 5s && midori  --inactivity-reset=120 -e Fullscreen --app=/PATH/TO/HOMEPAGE
 that will make it run with fewer options auto resetting after 2 minutes inactivity
 
 
-## Alternative Method 2:
+## Alternative Method 2 - Add Chromium to Autostart (WRONG)
 
-I have got it working. It seems you can't start chromium from bash as it there is no gui so fails.
+This method is wrong and does not seem to work reliably. left in notes to show why it does not work!
+
+
+It seems you can't start chromium from bash as it there is no gui so fails.
 
 I got chromium to start on boot by adding
 ```
 "@chromium --kiosk www.bbc.co.uk" 
 ```
 to the "autostart" file in /etc/xdg/lxsession/LXDE/
+
+
 
 ## Alternative Method 3:
 
@@ -259,7 +269,7 @@ Enjoy
 
 _____________________________________________________________________________________
 
-## THIS BIT WORKED - Note this is the 1st example above
+## Method 4? THIS BIT WORKED - Note this is the 1st example above
 
 Notes#
 Yes I had the same problem and the instructions on this stack overflow page helped fix it:
