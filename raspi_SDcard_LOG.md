@@ -7,20 +7,19 @@ This file will help me track their use.
 
 
 # Orange Sandisk 32 GB
-
-## OS
+### OS
 
 > Raspberry Pi OS
 
-## Install Month
+### Install Month
 
 > April 2021
 
-## Features
+### Features
 
 > Autostart Chrome Kiosk Mode. Pointed at envirostation Grafana
 
-## Use
+### Use Case
 
 > Home weatherstation screen
 
