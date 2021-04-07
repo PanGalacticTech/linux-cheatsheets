@@ -38,56 +38,78 @@ ________________________________________________________________________________
 #### Notes:
 ___________________________________________________________________________________________________________
 
-## Purple Sandisk 64 GB
-### OS
+### Purple Sandisk 64 GB
+#### OS
 `Ubuntu20 Desktop Version`
-### Hostname
+#### Hostname
 `obentu`
-### Install Month
+#### Install Month
 ` March 2021 `
-### Features
+#### Features
 `GNUradio`
-### Use Case
+#### Use Case
 `Testing Ubuntu on Pi`
-### Raspberry Pi Model
+#### Raspberry Pi Model
 `pi 4 4GB`
-### Notes:
+#### Notes:
 `Problem with remote desktop `
 ___________________________________________________________________________________________________________
 
-## Pink Sandisk 32 GB
-### OS
+### Pink Sandisk 32 GB
+#### OS
 `Raspberry Pi OS Full`
-### Hostname
+#### Hostname
 `pizero`
-### Install Month
+#### Install Month
 ` March 2021 `
-### Features
+#### Features
 `Shared pizero folder` <br>
 `Shared network accessable excel HTML webpage`
-### Use Case
+#### Use Case
 `Testing Pi Zero Featured`
-### Raspberry Pi Model
+#### Raspberry Pi Model
 `pi zero`
-### Notes:
+#### Notes:
 ` `
 ___________________________________________________________________________________________________________
 
-## Blank 32 GB
-### OS
-`R OS`
-### Hostname
-`host`
-### Install Month
-` 2021 `
-### Features
-`Fresh Install`
-### Use Case
-`none`
-### Raspberry Pi Model
-`pi`
-### Notes:
+### pi4 32 GB
+#### OS
+`Raspberry Pi OS`
+#### Hostname
+`pi4`
+#### Install Month
+`December 2020 `
+#### Features
+`Useable as Desktop`
+#### Use Case
+`3rd Stage Test`
+#### Raspberry Pi Model
+`pi 4`
+#### Notes:
 ___________________________________________________________________________________________________________
 
 
+### Blank 32 GB
+#### OS
+`R OS`
+#### Hostname
+`host`
+#### Install Month
+` 2021 `
+#### Features
+`Fresh Install`
+#### Use Case
+`none`
+#### Raspberry Pi Model
+`pi`
+#### Notes:
+___________________________________________________________________________________________________________
     
+
+
+## SD Card Cases
+
+Black = Blank
+
+Loose = Blank
