@@ -6,36 +6,36 @@ This file will help me track their use.
 
 
 
-## Orange Sandisk 32 GB
-### OS
+### Orange Sandisk 32 GB
+#### OS
 `Raspberry Pi OS Full`
-### Hostname
+#### Hostname
 `raspberrypi3`
-### Install Month
+#### Install Month
 `April 2021`
-### Features
+#### Features
 `Autostart Chrome Kiosk Mode. Pointed at envirostation Grafana`
-### Use Case
+#### Use Case
 `Home weatherstation screen`
-### Raspberry Pi Model
+#### Raspberry Pi Model
 `Pi 3`
-### Notes:
+#### Notes:
 ___________________________________________________________________________________________________________
 
-## Blue Sandisk 32 GB
-### OS
+### Blue Sandisk 32 GB
+#### OS
 `Raspberry Pi OS Full`
-### Hostname
+#### Hostname
 `raspberrypi`
-### Install Month
+#### Install Month
 `April 2021`
-### Features
+#### Features
 `Fresh Install`
-### Use Case
+#### Use Case
 `Home weatherstation screen`
-### Raspberry Pi Model
+#### Raspberry Pi Model
 `Pi 3`
-### Notes:
+#### Notes:
 ___________________________________________________________________________________________________________
 
 ## Purple Sandisk 64 GB
