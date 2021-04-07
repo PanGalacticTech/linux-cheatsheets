@@ -32,6 +32,8 @@ Dock is not visible, looking for solution
 
 This version worked exeptionally well
 
+https://c-nergy.be/blog/?p=15978
+
 Navigate to Downloads Folder
 
 `cd Downloads`
