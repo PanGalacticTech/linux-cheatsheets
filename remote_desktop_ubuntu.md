@@ -68,6 +68,8 @@ Run Script as Normal User
 
 To restart Server
 
+`sudo service xrdp restart` 
+
 `sudo /etc/init.d/xrdp restart`
 
 
