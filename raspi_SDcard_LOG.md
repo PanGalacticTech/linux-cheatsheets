@@ -6,7 +6,7 @@ This file will help me track their use.
 
 
 
-# Orange Sandisk 32 GB
+## Orange Sandisk 32 GB
 ### OS
 
 > Raspberry Pi OS
