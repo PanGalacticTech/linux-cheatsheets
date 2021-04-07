@@ -8,9 +8,7 @@ This file will help me track their use.
 
 ## Orange Sandisk 32 GB
 ### OS
-```
-Raspberry Pi OS
-```
+`Raspberry Pi OS`
 ### Install Month
 ```
 April 2021
