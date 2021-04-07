@@ -65,10 +65,10 @@ Run Script as Normal User
  
   `./xrdp-installer-1.2.2.sh -r`
   
-  
 
+To restart Server
 
-
+`sudo /etc/init.d/xrdp restart`
 
 
 
