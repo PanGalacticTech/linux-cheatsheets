@@ -56,5 +56,8 @@ use rm with recursive (-r) flag
 ## Copying Files
 
 
+# IP Tools
+
+`nmap -sP 192.168.1.0\24`
 
 
