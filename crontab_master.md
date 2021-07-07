@@ -64,10 +64,26 @@ to enable cron service:
 sudo systemctl enable cron.service
 ```
 
+
+## Crontab & Python
+
+Further work is required to make crontab function with python scripts
+
+1. Add following code to the top of foo.py script:
+
+```
+#! /usr/bin/python
+```
+2. Give execute permission to the script using:
+
+```
+chmod a+x foo.py
+```
+
 Example:
 
 ```
-@reboot sleep 60 && python3 home/pi/python_projects/launch_controller/led_check.py
+@reboot sleep 60 && usr/bin/python home/pi/python_projects/launch_controller/led_check.py
 
 ```
 
