@@ -80,6 +80,7 @@ Further work is required to make crontab function with python scripts
 chmod a+x foo.py
 ```
 
+### Problems using Reboot & Python
 Example:
 
 ```
@@ -87,4 +88,14 @@ Example:
 
 ```
 
+try:
+```
+@reboot export DISPLAY=:0; python3 
+```
+or
+replace :0 with output of
+
+```
+echo $DISPLAY
+```
 
