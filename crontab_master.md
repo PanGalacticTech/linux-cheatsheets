@@ -64,6 +64,11 @@ to enable cron service:
 sudo systemctl enable cron.service
 ```
 
+Example:
 
+```
+@reboot sleep 60 && python3 home/pi/python_projects/launch_controller/led_check.py
+
+```
 
 
