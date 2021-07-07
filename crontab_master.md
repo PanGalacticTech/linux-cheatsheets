@@ -83,7 +83,7 @@ chmod a+x foo.py
 Example:
 
 ```
-@reboot sleep 60 && usr/bin/python home/pi/python_projects/launch_controller/led_check.py
+@reboot sleep 60 && usr/bin/python3 home/pi/python_projects/launch_controller/led_check.py
 
 ```
 
