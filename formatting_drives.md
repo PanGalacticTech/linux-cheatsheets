@@ -13,7 +13,7 @@ Look for similar to:
 
 Unmount Disk
 
-`sudo unmount /dev/sdb1 `
+`sudo umount /dev/sdb1 `
 
 To format as FAT32
 
