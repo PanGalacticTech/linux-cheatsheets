@@ -1,5 +1,19 @@
 # Headless Raspberry Pi Setup *WiFi Settings*
 
+# BEFORE BOOTING/AFTER FLASHING SD
+
+1. `add SSH file to boot directory` raspberry pi OS APPARENTLY turns ssh on as standard apart from it doesn't
+
+## Turning On Wifi Adaptor
+
+Also something that APPARENtly is turned on already, except when it is not.
+
+2. `  `
+
+Then:
+
+## Setting Up Wifi SSID & PSWD
+
 Follow these steps to set up a headless raspberry pi on wifi:
 
 
