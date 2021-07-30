@@ -7,3 +7,10 @@ hostname is saved in file
 
 `/etc/hosts`
 
+
+## NMAP GUIDE
+
+Scan IPs on Network XX.XX.XX
+
+`sudo nmap XX.XX.XX.* -rP`
+
