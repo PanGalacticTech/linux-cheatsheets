@@ -16,3 +16,8 @@ Scan IPs on Network XX.XX.XX
 
 * Note. Dont know what flags do but -rP seems useful
 
+`-rP`   Dont know but lots of info - no device type
+
+
+`-sP`   Reports back device types
+
