@@ -14,3 +14,5 @@ Scan IPs on Network XX.XX.XX
 
 `sudo nmap XX.XX.XX.* -rP`
 
+* Note. Dont know what flags do but -rP seems useful
+
