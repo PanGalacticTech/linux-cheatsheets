@@ -58,6 +58,17 @@ use rm with recursive (-r) flag
 
 # IP Tools
 
-`nmap -sP 192.168.1.0/24`
+## NMAP GUIDE
+
+Scan IPs on Network XX.XX.XX
+
+`sudo nmap XX.XX.XX.* -rP`
+
+* Note. Dont know what flags do but -rP seems useful
+
+`-rP`   Dont know but lots of info - no device type
+
+
+`-sP`   Reports back device types
 
 
