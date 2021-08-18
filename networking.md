@@ -21,3 +21,5 @@ Scan IPs on Network XX.XX.XX
 
 `-sP`   Reports back device types
 
+`-sP` has been replaced with `-sn` as the preferred way to do ping scans, while skipping port scanning.
+
