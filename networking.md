@@ -23,3 +23,5 @@ Scan IPs on Network XX.XX.XX
 
 `-sP` has been replaced with `-sn` as the preferred way to do ping scans, while skipping port scanning.
 
+Run as admin if Not seeing Hostnames
+
