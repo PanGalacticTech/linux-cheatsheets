@@ -26,7 +26,7 @@ Scan IPs on Network XX.XX.XX
 Run as admin if Not seeing Hostnames
 
 
-> `-n` no reverse DNS
-> `-Pn` no host discovery
-> `-sn` no port scan
+> `-n` no reverse DNS <br>
+> `-Pn` no host discovery <br>
+> `-sn` no port scan <br>
 
