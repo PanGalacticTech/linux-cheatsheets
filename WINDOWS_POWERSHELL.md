@@ -16,6 +16,12 @@ while ($true) {
   my_command;
 }
 ```
+Example - Loop SSH Attempts till connect
 
+```
+while ($true) {
+ssh pi@piog.local
+}
+```
 
 
