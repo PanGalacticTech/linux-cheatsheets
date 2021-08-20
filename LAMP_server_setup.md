@@ -1,5 +1,9 @@
 # LAMPserver
-Up to Date instructional on setting up LAMP server on Raspbian Buster/Debian 10
+Up to Date instructional on setting up LAMP server on Raspbian Buster/Debian 
+
+For Full Instruction See: 
+
+https://github.com/PanGalacticTech/LAMPserver
 
 
 Janurary 2020:
