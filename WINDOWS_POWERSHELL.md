@@ -4,6 +4,10 @@
 
 ### Network Tools
 
+## Renew DHCP Licence
+
+`ipconfig /renew`
+
 #### Find Hostname
 
 `cmd /k hostname`
