@@ -26,6 +26,10 @@ Check if service is runnin
 
 ` sudo systemctl status avahi-daemon`
 
+To check files
+
+`systemctl list-unit-files "*avahi*"`
+
 to disable service
 
 `sudo systemctl stop avahi-deamon`
