@@ -7,6 +7,32 @@ hostname is saved in file
 
 `/etc/hosts`
 
+## DHCP & dhcpcd file
+
+Check if dhcpcd service is running 
+
+`sudo service dhcpcd status`
+
+In case it’s not, activate DHCPCD as follows:
+
+`sudo service dhcpcd start`
+`sudo systemctl enable dhcpcd`
+
+## avahi - deamon
+
+avahi ensures hostname is recorded by DNS, makes hostname.local work
+
+Check if service is runnin
+
+` sudo systemctl status avahi-daemon`
+
+to disable service
+
+`sudo systemctl stop avahi-deamon`
+`sudo systemctl disable avahi-daemon`
+
+
+
 
 ## NMAP GUIDE
 
