@@ -30,9 +30,12 @@ To check files
 
 `systemctl list-unit-files "*avahi*"`
 
+To restart Service
+`sudo systemctl enable avahi-daemon.service`
+
 to disable service
 
-`sudo systemctl stop avahi-deamon`
+`sudo systemctl stop avahi-deamon` <br>
 `sudo systemctl disable avahi-daemon`
 
 
