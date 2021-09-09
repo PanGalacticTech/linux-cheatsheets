@@ -1,6 +1,14 @@
 # Formatting Drives
 
+## Creating New Partitions
 
+Verify current partitions
+`fdisk -l`
+
+
+
+
+## USB Drives
 
 Locate Drive
 
