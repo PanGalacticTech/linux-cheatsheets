@@ -32,7 +32,7 @@
 12. `crl + s`
 
 
-13. SATA mode Change to `AHCI
+13. SATA mode Change to `AHCI`
 
 
 14. Enable F12 boot menu
