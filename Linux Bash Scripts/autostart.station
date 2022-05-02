@@ -20,10 +20,10 @@
 @xset -dpms
 @xset s noblank
 #@chromium-browser --incognito  http://pangalactictech.com:3000/d/hjBv7igMz/env$
-#@chromium-browser --incognito  http://192.168.1.111:81/stream
-@chromium-browser --incognito --kiosk http://pangalactictech.com:3000/d/hjBv7igMz/envirostation-edinburgh?orgId=2&refresh=30s$
+@chromium-browser --incognito  http://192.168.1.111:81/stream
+#@chromium-browser --incognito --kiosk http://pangalactictech.com:3000/d/hjBv7igMz/envirostation-edinburgh?orgId=2&refresh=30s$
  # load chromium after boot and point to the localhost webserver in full scree$
 @unclutter -idle 20           # Sets unclutter to hide mouse if no movement
 #@/home/pi/start_browser.sh   # << if kiosk mode does not work, make sure this file exists
-#!/bin/bash
-#xdotool key F11                        # and put in command to press F11 instead
+#sh /home/pi/sleep_x.sh 5                      # and put in command to press F11 instead
+#sh /home/pi/pressF11.sh
