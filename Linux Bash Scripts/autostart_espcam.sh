@@ -1,5 +1,7 @@
 
 #! /bin/sh
+ . ~/.bash_profile
+ 
 # autostart station
 # navigates to home directory, then to this directory.
 # /home/pi/.config/lxsession/LXDE-pi/
@@ -14,18 +16,21 @@
 
 
 echo "Setting ESPcam as startup script"
-cd /
-cd /home/pi/.config/lxsession/LXDE-pi/
+#cd /
+#cd /home/pi/.config/lxsession/LXDE-pi/
 
-FILE = ~/autostart.espcam
-if [[ -f "$FILE" ]]; then
-    echo "$FILE already exists. Are you sure you want to run this script?"
-else 
-    echo "$FILE Does not exist, renaming autostart"
-    mv autostart autostart.espcam   # Rename autostart autostart espcam
-	mv autostart.station autostart       # rename autostart.station
-fi
-cd /
+#[ -f "/home/pi/.config/lxsession/LXDE-pi/" ] && echo "$FILE exist." || echo "$FILE does not exist."
+
+#FILE = /home/pi/.config/lxsession/LXDE-pi/autostart.espcam
+#if [ -f "$FILE" ] ; then
+#    echo "$FILE already exists. Are you sure you want to run this script?"
+#else 
+#    echo "$FILE Does not exist, renaming autostart"
+#    cd /home/pi/.config/lxsession/LXDE-pi/
+#    mv autostart autostart.espcam   # Rename autostart autostart espcam
+#	mv autostart.station autostart       # rename autostart.station
+#fi
+#cd /
 
 #echo "Does $USER wish to reboot now?"
 #read -n1 -p "Reboot Now? [y,n]" answer
@@ -37,4 +42,6 @@ cd /
 
 
 #https://linuxize.com/post/bash-check-if-file-exists/ 
+# [ -f /etc/resolv.conf ] && echo "$FILE exist." || echo "$FILE does not exist."
+
 #https://stackoverflow.com/questions/5542016/bash-user-input-if
