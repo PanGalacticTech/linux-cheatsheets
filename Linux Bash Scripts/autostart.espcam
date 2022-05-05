@@ -1,0 +1,29 @@
+
+
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+
+
+
+
+# Comment out this line to stop desktop environment from loading
+#@lxpanel --profile LXDE-pi`
+# Comment out this line to stop desktop profile from loading
+#@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+#@/home/pi/start_browser.sh
+#@chromium --kiosk http://pangalactictech.com:3000/d/hjBv7igMz/envirostation-ed$
+
+#@xscreensaver -no-splash  # comment this line out to disable screensaver
+@xset s off
+@xset -dpms
+@xset s noblank
+#@chromium-browser --incognito  http://pangalactictech.com:3000/d/hjBv7igMz/env$
+@chromium-browser --incognito  http://192.168.1.111:81/stream
+#@chromium-browser --incognito --kiosk http://pangalactictech.com:3000/d/hjBv7igMz/envirostation-edinburgh?orgId=2&refresh=30s$
+ # load chromium after boot and point to the localhost webserver in full scree$
+@unclutter -idle 20           # Sets unclutter to hide mouse if no movement
+#@/home/pi/start_browser.sh   # << if kiosk mode does not work, make sure this file exists
+#sh /home/pi/sleep_x.sh 5                      # and put in command to press F11 instead
+#sh /home/pi/pressF11.sh
