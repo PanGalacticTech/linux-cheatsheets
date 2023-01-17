@@ -76,3 +76,6 @@ Run as admin if Not seeing Hostnames
 > `-Pn` no host discovery <br>
 > `-sn` no port scan <br>
 
+
+
+https://raspberrypi.stackexchange.com/questions/124755/using-wired-and-wireless-connection-simultaniously-on-raspberry-pi-4
