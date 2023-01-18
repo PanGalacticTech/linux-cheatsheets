@@ -60,7 +60,7 @@ _What exactly is PATH, why is PATH and how can PATH improve your life?_
 
 https://linuxize.com/post/how-to-add-directory-to-path-in-linux/
 
-to add `/bin` in home directory to path for all users
+to add `/bin` in home directory to path PER USER
 
 `nano ~/.bashrc`
 
@@ -68,6 +68,10 @@ to add `/bin` in home directory to path for all users
 ~/.bashrc
 export PATH="$HOME/bin:$PATH"
 ```
+
+Global shell specific configuration files such as /etc/environment and /etc/profile. 
+Use this file if you want the new directory to be added to ALL system USERS $PATH.
+
 
 # IP Tools
 
