@@ -71,4 +71,8 @@ Scan IPs on Network XX.XX.XX
 
 `-sP`   Reports back device types
 
+## On Windows
+
+`arp -a`
+
 
