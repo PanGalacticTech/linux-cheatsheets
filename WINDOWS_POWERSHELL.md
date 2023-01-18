@@ -28,4 +28,6 @@ ssh pi@piog.local
 }
 ```
 
+###  Search all ips on network ### Look for str1 ### return all results that do not include str2
 
+`arp -a | findstr "192.168.1." | findstr /V "255"`
