@@ -60,6 +60,14 @@ _What exactly is PATH, why is PATH and how can PATH improve your life?_
 
 https://linuxize.com/post/how-to-add-directory-to-path-in-linux/
 
+to add `/bin` in home directory to path for all users
+
+`nano ~/.bashrc`
+
+```
+~/.bashrc
+export PATH="$HOME/bin:$PATH"
+```
 
 # IP Tools
 
