@@ -55,6 +55,11 @@ use rm with recursive (-r) flag
 
 ## Copying Files
 
+# PATH
+_What exactly is PATH, why is PATH and how can PATH improve your life?_
+
+https://linuxize.com/post/how-to-add-directory-to-path-in-linux/
+
 
 # IP Tools
 
