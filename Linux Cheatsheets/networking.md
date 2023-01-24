@@ -76,6 +76,10 @@ Run as admin if Not seeing Hostnames
 > `-Pn` no host discovery <br>
 > `-sn` no port scan <br>
 
+### Specifying a sebnet mask
+https://library.netapp.com/ecmdocs/ECMP1155586/html/GUID-B02ACB37-C1CD-44E7-9AF7-ABB50F2E42BB.html
+
+
 ## Wired Internet Not Working?
 https://askubuntu.com/questions/1049302/wired-ethernet-not-working-ubuntu-18-04
 
