@@ -76,6 +76,7 @@ Run as admin if Not seeing Hostnames
 > `-Pn` no host discovery <br>
 > `-sn` no port scan <br>
 
-
+## Wired Internet Not Working?
+https://askubuntu.com/questions/1049302/wired-ethernet-not-working-ubuntu-18-04
 
 https://raspberrypi.stackexchange.com/questions/124755/using-wired-and-wireless-connection-simultaniously-on-raspberry-pi-4
