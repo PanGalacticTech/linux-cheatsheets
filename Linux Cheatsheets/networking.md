@@ -89,3 +89,7 @@ https://raspberrypi.stackexchange.com/questions/124755/using-wired-and-wireless-
 
 # I dont even fucking know DHCP issues
 https://www.redhat.com/sysadmin/troubleshoot-network-dhcp-configuration
+
+# IF EVERYTHING IS BROKEN
+
+https://askubuntu.com/questions/1039233/no-wired-connection-wired-unmanaged-ubuntu-18-04
