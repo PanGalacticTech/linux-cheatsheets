@@ -93,3 +93,4 @@ https://www.redhat.com/sysadmin/troubleshoot-network-dhcp-configuration
 # IF EVERYTHING IS BROKEN
 
 https://askubuntu.com/questions/1039233/no-wired-connection-wired-unmanaged-ubuntu-18-04
+https://askubuntu.com/questions/906636/ethernet-adapter-was-disable-on-ubuntu-17-04/909185#909185
