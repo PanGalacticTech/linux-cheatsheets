@@ -78,6 +78,12 @@ Run as admin if Not seeing Hostnames
 > `-Pn` no host discovery <br>
 > `-sn` no port scan <br>
 
+
+## Using RPi as DHCP Server
+(Attempt 2)
+https://raspberrytips.com/dhcp-server-on-raspberry-pi/
+
+
 ### Specifying a sebnet mask
 https://library.netapp.com/ecmdocs/ECMP1155586/html/GUID-B02ACB37-C1CD-44E7-9AF7-ABB50F2E42BB.html
 
