@@ -9,6 +9,8 @@ hostname is saved in file
 
 ## DHCP & dhcpcd file
 
+https://www.linuxfordevices.com/tutorials/ubuntu/dhcp-server-on-ubuntu
+
 Check if dhcpcd service is running 
 
 `sudo service dhcpcd status`
