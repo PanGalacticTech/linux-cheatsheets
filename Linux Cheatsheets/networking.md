@@ -86,3 +86,6 @@ https://library.netapp.com/ecmdocs/ECMP1155586/html/GUID-B02ACB37-C1CD-44E7-9AF7
 https://askubuntu.com/questions/1049302/wired-ethernet-not-working-ubuntu-18-04
 
 https://raspberrypi.stackexchange.com/questions/124755/using-wired-and-wireless-connection-simultaniously-on-raspberry-pi-4
+
+# I dont even fucking know DHCP issues
+https://www.redhat.com/sysadmin/troubleshoot-network-dhcp-configuration
