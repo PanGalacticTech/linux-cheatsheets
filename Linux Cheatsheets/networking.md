@@ -73,6 +73,8 @@ Scan IPs on Network XX.XX.XX
 
 Run as admin if Not seeing Hostnames
 
+`sudo nmap -v 192.168.1.* -sP `  
+
 
 > `-n` no reverse DNS <br>
 > `-Pn` no host discovery <br>
