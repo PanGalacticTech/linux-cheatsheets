@@ -25,10 +25,3 @@ Replace `{ }` with the file name you saved.
 7. Paste the entirety of the public key and save. 
 
 
-# ZSH - Alternative Shell with additional benifts & git integration
-
-https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
-
-https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
-
-https://github.com/ohmyzsh/ohmyzsh
