@@ -105,3 +105,7 @@ https://askubuntu.com/questions/906636/ethernet-adapter-was-disable-on-ubuntu-17
 
 # Get Out The Shit - Will fix even if REALLY messed up!
 https://askubuntu.com/questions/1039233/no-wired-connection-wired-unmanaged-ubuntu-18-04
+
+# SECRET KNOWLEDGE
+
+https://vitux.com/how-to-configure-networking-with-netplan-on-ubuntu/
