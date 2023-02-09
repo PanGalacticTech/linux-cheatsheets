@@ -25,3 +25,8 @@ Replace `{ }` with the file name you saved.
 7. Paste the entirety of the public key and save. 
 
 
+## Copying SSH key to remote server
+```
+ssh-copy-id -i ~/.ssh/mykey user@host
+```
+
