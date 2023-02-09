@@ -30,3 +30,4 @@ Replace `{ }` with the file name you saved.
 ssh-copy-id -i ~/.ssh/mykey user@host
 ```
 
+Note: Is unclear if should copy `mykey` or `mykey.pub` file. Went with `mykey.pub`
