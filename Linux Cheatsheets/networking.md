@@ -109,3 +109,8 @@ https://askubuntu.com/questions/1039233/no-wired-connection-wired-unmanaged-ubun
 # SECRET KNOWLEDGE
 
 https://vitux.com/how-to-configure-networking-with-netplan-on-ubuntu/
+
+
+# Tunnelling Example
+
+https://askubuntu.com/questions/609645/configure-connection-sharing-with-specific-ip-address
