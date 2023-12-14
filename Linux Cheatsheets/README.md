@@ -1,5 +1,8 @@
 # User Management in Linux
 
+## Change User
+`su [USERNAME]`
+
 ## Add New Users
 
 `sudo adduser [NAME]`
