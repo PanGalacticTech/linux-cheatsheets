@@ -4,6 +4,7 @@
 `su [USERNAME]`
 
 ## Add New Users
+https://unix.stackexchange.com/questions/82923/proper-way-to-add-a-user-account-via-bash-script
 
 `sudo adduser [NAME]`
 
