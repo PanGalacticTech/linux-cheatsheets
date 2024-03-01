@@ -3,6 +3,9 @@ Cheatsheets of linux commands & Tutorials to help begginers navigate
 
 ## Navigating Directories
 
+Show Current Path:
+`pwd`  <br><br>
+
 Change Directory:
 
 `cd <new directory>`<br><br>
